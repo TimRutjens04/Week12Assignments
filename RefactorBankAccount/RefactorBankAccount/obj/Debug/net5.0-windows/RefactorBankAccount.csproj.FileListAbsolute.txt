@@ -1,0 +1,17 @@
+C:\Users\timru\Downloads\S-Week14_BankAccount_StartUp\RefactorBankAccount\RefactorBankAccount\bin\Debug\net5.0-windows\RefactorBankAccount.exe
+C:\Users\timru\Downloads\S-Week14_BankAccount_StartUp\RefactorBankAccount\RefactorBankAccount\bin\Debug\net5.0-windows\RefactorBankAccount.deps.json
+C:\Users\timru\Downloads\S-Week14_BankAccount_StartUp\RefactorBankAccount\RefactorBankAccount\bin\Debug\net5.0-windows\RefactorBankAccount.runtimeconfig.json
+C:\Users\timru\Downloads\S-Week14_BankAccount_StartUp\RefactorBankAccount\RefactorBankAccount\bin\Debug\net5.0-windows\RefactorBankAccount.runtimeconfig.dev.json
+C:\Users\timru\Downloads\S-Week14_BankAccount_StartUp\RefactorBankAccount\RefactorBankAccount\bin\Debug\net5.0-windows\RefactorBankAccount.dll
+C:\Users\timru\Downloads\S-Week14_BankAccount_StartUp\RefactorBankAccount\RefactorBankAccount\bin\Debug\net5.0-windows\RefactorBankAccount.pdb
+C:\Users\timru\Downloads\S-Week14_BankAccount_StartUp\RefactorBankAccount\RefactorBankAccount\obj\Debug\net5.0-windows\RefactorBankAccount.Form1.resources
+C:\Users\timru\Downloads\S-Week14_BankAccount_StartUp\RefactorBankAccount\RefactorBankAccount\obj\Debug\net5.0-windows\RefactorBankAccount.csproj.GenerateResource.cache
+C:\Users\timru\Downloads\S-Week14_BankAccount_StartUp\RefactorBankAccount\RefactorBankAccount\obj\Debug\net5.0-windows\RefactorBankAccount.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\timru\Downloads\S-Week14_BankAccount_StartUp\RefactorBankAccount\RefactorBankAccount\obj\Debug\net5.0-windows\RefactorBankAccount.AssemblyInfoInputs.cache
+C:\Users\timru\Downloads\S-Week14_BankAccount_StartUp\RefactorBankAccount\RefactorBankAccount\obj\Debug\net5.0-windows\RefactorBankAccount.AssemblyInfo.cs
+C:\Users\timru\Downloads\S-Week14_BankAccount_StartUp\RefactorBankAccount\RefactorBankAccount\obj\Debug\net5.0-windows\RefactorBankAccount.csproj.CoreCompileInputs.cache
+C:\Users\timru\Downloads\S-Week14_BankAccount_StartUp\RefactorBankAccount\RefactorBankAccount\obj\Debug\net5.0-windows\RefactorBankAccount.dll
+C:\Users\timru\Downloads\S-Week14_BankAccount_StartUp\RefactorBankAccount\RefactorBankAccount\obj\Debug\net5.0-windows\refint\RefactorBankAccount.dll
+C:\Users\timru\Downloads\S-Week14_BankAccount_StartUp\RefactorBankAccount\RefactorBankAccount\obj\Debug\net5.0-windows\RefactorBankAccount.pdb
+C:\Users\timru\Downloads\S-Week14_BankAccount_StartUp\RefactorBankAccount\RefactorBankAccount\obj\Debug\net5.0-windows\RefactorBankAccount.genruntimeconfig.cache
+C:\Users\timru\Downloads\S-Week14_BankAccount_StartUp\RefactorBankAccount\RefactorBankAccount\obj\Debug\net5.0-windows\ref\RefactorBankAccount.dll
