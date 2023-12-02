@@ -32,5 +32,9 @@ namespace ConstantsExc
         public double GetCurrentRevenue()
         { return pricePerPage * this.pagesPrinted; }
     }
+    /* 
+    If the printing price changes from 0.05 to e.g. 0.07 
+    you simply change the value of the pricePerPage constant in line 13.
+     */
 
 }
