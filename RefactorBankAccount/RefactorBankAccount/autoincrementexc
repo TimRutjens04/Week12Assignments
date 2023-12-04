@@ -1,0 +1,8 @@
+public BankAccount() 
+{
+    accountNr = nextAccountNo++;
+    clientName = "Default";
+    transactions = new List<double>();
+}
+
+// is all code i could add because something was glitched (i had to install .NET again?)
