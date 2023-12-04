@@ -45,6 +45,7 @@
             btnRound.TabIndex = 0;
             btnRound.Text = "Round 10x";
             btnRound.UseVisualStyleBackColor = true;
+            btnRound.Click += btnRound_Click;
             // 
             // label1
             // 
