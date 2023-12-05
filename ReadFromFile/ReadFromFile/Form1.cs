@@ -80,7 +80,7 @@ namespace ReadFromFile
                 Last_name = values[1];
                 Email = values[2];
                 Gender = values[3];
-                Slogan = values[4];
+                //Slogan = values[4];
                 Ip_adress = values[5];
             }
             else { throw new Exception("Invalid CSV format."); }
