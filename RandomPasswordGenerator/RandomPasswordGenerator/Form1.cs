@@ -38,10 +38,10 @@ namespace RandomPasswordGenerator
             Random random = new Random();
             string[] passwords = new string[count];
 
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < count; i++) //amount of passwords
             {
                 char[] passwordArray = new char[length];
-                for (int j = 0; j < length; j++)
+                for (int j = 0; j < length; j++) //length of passwords
                 {
                     int randomIndex = random.Next(0, allCharacters.Length);
                     passwordArray[j] = allCharacters[randomIndex];
