@@ -68,7 +68,7 @@ namespace ReadFromFile
         public string Last_name { get; set; }
         public string Email { get; set; }
         public string Gender { get; set; }
-        public string Slogan { get; set; }
+        //public string Slogan { get; set; }
         public string Ip_adress { get; set; }
 
         public Person(string csvLine)
