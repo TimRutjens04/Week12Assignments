@@ -1,4 +1,5 @@
 using System.Net;
+using System.Text.RegularExpressions;
 
 namespace StreamingMusicApp
 {
@@ -80,13 +81,14 @@ namespace StreamingMusicApp
 
             service.AddSong(artist, title, genre, durationInSeconds);
 
-            MessageBox.Show($"Song added to the music service: {artist} - {title}");
+            MessageBox.Show($"Song added to the music service: {artist} - {title} - {genre} - {durationInSeconds}");
             RefreshQueue();
         }
 
 
         private void btnSongsAddFavorites_Click(object sender, EventArgs e)
         {
+            int id;
             string artist = tbxSongsArtist.Text;
             string title = tbxSongsTitle.Text;
             Genre genre;
@@ -101,6 +103,9 @@ namespace StreamingMusicApp
                 MessageBox.Show("Please fill in all the song details.");
                 return;
             }
+
+            //Song selectedSong = service.GetSong(id);            
+            
             MessageBox.Show("Song added to favorites.");
             RefreshFavorites();
         }
@@ -114,15 +119,23 @@ namespace StreamingMusicApp
         {
             if (clbxSongsQueue.CheckedItems.Count > 0)
             {
-                object[] checkedItemsCopy = new object[clbxSongsQueue.CheckedItems.Count];
-                clbxSongsQueue.CheckedItems.CopyTo(checkedItemsCopy, 0);
-
-                foreach (object checkedItem in checkedItemsCopy)
+                foreach (object checkedItem in clbxSongsQueue.CheckedItems)
                 {
-                    clbxSongsQueue.Items.Remove(checkedItem);
+                    string songInfo = checkedItem.ToString();
+
+                    string idSubstring = Regex.Match(songInfo, @"\d+").Value; //found this on a forum, am using this to make sure only numeric values are passed to the TryParse
+
+                    if (int.TryParse(idSubstring, out int songID))
+                    {
+                        service.RemoveSong(songID);
+                    }
                 }
+
+                RefreshQueue(); 
             }
         }
+
+
 
 
         private void btnSongsQueueAddFavorites_Click(object sender, EventArgs e)
@@ -150,20 +163,26 @@ namespace StreamingMusicApp
         {
             if (clbxFavoritesList.CheckedItems.Count > 0)
             {
-                object[] checkedItemsCopy = new object[clbxFavoritesList.CheckedItems.Count];
-                clbxFavoritesList.CheckedItems.CopyTo(checkedItemsCopy, 0);
+                List<object> itemsToRemove = new List<object>();
 
-                foreach (object checkedItem in checkedItemsCopy)
+                foreach (object checkedItem in clbxFavoritesList.CheckedItems)
                 {
-                    clbxFavoritesList.Items.Remove(checkedItem);
-
                     if (checkedItem is Song selectedSong)
                     {
                         user.RemoveSongFromFavorites(selectedSong);
+                        itemsToRemove.Add(checkedItem);
                     }
                 }
+
+                foreach (var itemToRemove in itemsToRemove)
+                {
+                    clbxFavoritesList.Items.Remove(itemToRemove);
+                }
+
+                RefreshFavorites(); // Refresh the favorites list after removal
             }
         }
+
 
 
 

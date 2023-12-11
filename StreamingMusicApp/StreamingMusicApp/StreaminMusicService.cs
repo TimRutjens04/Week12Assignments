@@ -55,5 +55,14 @@ namespace StreamingMusicApp
         {
             return $"Streaming Music service: {this.name} ({this.songs.Count} songs)";
         }
+        public void RemoveSong(int id)
+        {
+            Song songToRemove = songs.FirstOrDefault(s => s.GetId() == id);
+
+            if (songToRemove != null)
+            {
+                songs.Remove(songToRemove);
+            }
+        }
     }
 }
