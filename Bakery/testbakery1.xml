@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Bakery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <_name>Company</_name>
+  <sandwiches>
+    <Sandwich>
+      <ingredients>
+        <Ingredient>
+          <Name>Cucumber</Name>
+          <Price>0.15</Price>
+        </Ingredient>
+        <Ingredient>
+          <Name>Chorizo</Name>
+          <Price>0.25</Price>
+        </Ingredient>
+        <Ingredient>
+          <Name>Apple</Name>
+          <Price>0.1</Price>
+        </Ingredient>
+      </ingredients>
+      <name>test1</name>
+      <basePrice>7.5</basePrice>
+      <bread>CIABATTA</bread>
+    </Sandwich>
+  </sandwiches>
+  <ingredients>
+    <Ingredient>
+      <Name>Cucumber</Name>
+      <Price>0.15</Price>
+    </Ingredient>
+    <Ingredient>
+      <Name>Tomato</Name>
+      <Price>0.15</Price>
+    </Ingredient>
+    <Ingredient>
+      <Name>Cheddar</Name>
+      <Price>0.2</Price>
+    </Ingredient>
+    <Ingredient>
+      <Name>Ham</Name>
+      <Price>0.15</Price>
+    </Ingredient>
+    <Ingredient>
+      <Name>Chorizo</Name>
+      <Price>0.25</Price>
+    </Ingredient>
+    <Ingredient>
+      <Name>Apple</Name>
+      <Price>0.1</Price>
+    </Ingredient>
+    <Ingredient>
+      <Name>Tuna</Name>
+      <Price>0.2</Price>
+    </Ingredient>
+    <Ingredient>
+      <Name>Smoked Salmon</Name>
+      <Price>0.4</Price>
+    </Ingredient>
+    <Ingredient>
+      <Name>Cream cheese</Name>
+      <Price>0.15</Price>
+    </Ingredient>
+    <Ingredient>
+      <Name>Gouda cheese</Name>
+      <Price>0.1</Price>
+    </Ingredient>
+    <Ingredient>
+      <Name>Boiled eggs</Name>
+      <Price>0.1</Price>
+    </Ingredient>
+  </ingredients>
+</Bakery>
