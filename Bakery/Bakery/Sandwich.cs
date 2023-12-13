@@ -66,11 +66,11 @@ namespace Bakery
 
         public string DisplayInfoSandwich()
         {
-            string breadValue = bread.ToString().Trim();
-            string nameValue = name.Trim();
-            string totalPriceValue = CalculateTotalPrice().ToString("C").Trim(); 
+            string breadValue = bread.ToString();
+            string nameValue = name;
+            string totalPriceValue = CalculateTotalPrice().ToString("C"); 
 
-            string displayInfo = $"{breadValue} - {nameValue} - {totalPriceValue}";
+            string displayInfo = $"{breadValue} - {nameValue} - {totalPriceValue}".Trim();
             
             Debug.WriteLine($"Bread: {breadValue}");
             Debug.WriteLine($"Name: {nameValue}");

@@ -14,4 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = RefactorBankAccount
-build_property.ProjectDir = C:\Users\timru\Downloads\S-Week14_BankAccount_StartUp\RefactorBankAccount\RefactorBankAccount\
+build_property.ProjectDir = C:\Users\Tim\Source\Repos\Week12Assignments\RefactorBankAccount\RefactorBankAccount\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

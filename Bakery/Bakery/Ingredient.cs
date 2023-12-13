@@ -28,7 +28,7 @@ namespace Bakery
         public double GetPrice()
         { return this.Price; }
 
-        public string DisplayInfoIngredient() => $"{Name} - {Price:C}";
+        public string DisplayInfoIngredient() => $"{Name} - {Price:C}".Trim();
         
     }
 }

@@ -27,7 +27,6 @@ namespace Bakery
 
     public partial class MainForm : Form
     {
-        private string connectionString = "Your_Connection_String_Here";
         private Bakery bakery;
         private Sandwich sandwich;
         private List<Sandwich> sandwiches = new List<Sandwich>();
@@ -82,48 +81,38 @@ namespace Bakery
         }
         private void lbxMenu_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lbxMenu.SelectedItem != null)
+            string selectedItem = lbxMenu.SelectedItem?.ToString();
+
+            if (!string.IsNullOrEmpty(selectedItem))
             {
-                string selectedDisplayInfo = lbxMenu.SelectedItem.ToString().Trim();
+                List<Ingredient> sandwichIngredients = new List<Ingredient>();
 
-                // Debugging statement to check the selected display info
-                Debug.WriteLine($"Selected Display Info: {selectedDisplayInfo}");
-
+                // Find matching sandwiches
                 List<Sandwich> matchingSandwiches = sandwiches
-                    .Where(s => string.Equals(s.DisplayInfoSandwich().Trim(), selectedDisplayInfo, StringComparison.OrdinalIgnoreCase))
+                    .Where(s => string.Equals(s.name.Trim(), selectedItem.Split('-')[1].Trim(), StringComparison.OrdinalIgnoreCase))
                     .ToList();
-
-                // Debugging statement to check the number of matching sandwiches
-                Debug.WriteLine($"Number of Matching Sandwiches: {matchingSandwiches.Count}");
-
-                // Initialize a variable to store sandwich information
-                string sandwichInfo = "";
 
                 foreach (var selectedSandwich in matchingSandwiches)
                 {
-                    // Debugging statement to check the display info for each matching sandwich
-                    Debug.WriteLine($"Matching Sandwich Display Info: {selectedSandwich.DisplayInfoSandwich()}");
+                    // Assuming GetIngredients returns a List<Ingredient>
+                    List<Ingredient> ingredients = selectedSandwich.GetIngredients();
 
-                    string displayName = selectedSandwich.GetName();
-                    List<string> displaySelectedIngredientList = selectedSandwich.GetIngredients()
-                        .Select(ingredient => ingredient.DisplayInfoIngredient())
-                        .ToList();
-
-                    string ingredientInfo = string.Join("\n", displaySelectedIngredientList);
-
-                    sandwichInfo += $"{displayName}\n{ingredientInfo}\n";
+                    // Add ingredients to the list
+                    sandwichIngredients.AddRange(ingredients);
                 }
 
-                // Debugging statement to check the final sandwich information
-                Debug.WriteLine($"Final Sandwich Info: {sandwichInfo}");
+                // Display ingredients
+                string ingredientInfo = string.Join("\n", sandwichIngredients.Select(ingredient => ingredient.DisplayInfoIngredient()));
 
-                lblSandwichInfo.Text = string.IsNullOrEmpty(sandwichInfo) ? "No matching sandwich found." : sandwichInfo;
+                // Display the final information
+                lblSandwichInfo.Text = string.IsNullOrEmpty(ingredientInfo) ? "No matching sandwich found." : ingredientInfo;
             }
             else
             {
                 lblSandwichInfo.Text = "No sandwich selected.";
             }
         }
+
 
 
 
