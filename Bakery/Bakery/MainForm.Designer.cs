@@ -44,12 +44,14 @@ namespace Bakery
             lblSandwichInfo = new System.Windows.Forms.Label();
             fdOpen = new System.Windows.Forms.OpenFileDialog();
             fdSave = new System.Windows.Forms.SaveFileDialog();
+            btnDatabase = new System.Windows.Forms.Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnDatabase);
             groupBox1.Controls.Add(btnShowOfferedSandwiches);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(cbbBreadFilter);
@@ -112,10 +114,10 @@ namespace Bakery
             // 
             // btnLoad
             // 
-            btnLoad.Location = new System.Drawing.Point(217, 312);
+            btnLoad.Location = new System.Drawing.Point(145, 312);
             btnLoad.Margin = new System.Windows.Forms.Padding(2);
             btnLoad.Name = "btnLoad";
-            btnLoad.Size = new System.Drawing.Size(209, 36);
+            btnLoad.Size = new System.Drawing.Size(140, 36);
             btnLoad.TabIndex = 2;
             btnLoad.Text = "Load data";
             btnLoad.UseVisualStyleBackColor = true;
@@ -126,7 +128,7 @@ namespace Bakery
             btnSave.Location = new System.Drawing.Point(5, 312);
             btnSave.Margin = new System.Windows.Forms.Padding(2);
             btnSave.Name = "btnSave";
-            btnSave.Size = new System.Drawing.Size(208, 36);
+            btnSave.Size = new System.Drawing.Size(136, 36);
             btnSave.TabIndex = 1;
             btnSave.Text = "Save data";
             btnSave.UseVisualStyleBackColor = true;
@@ -205,6 +207,17 @@ namespace Bakery
             // 
             fdOpen.FileName = "openFileDialog1";
             // 
+            // btnDatabase
+            // 
+            btnDatabase.Location = new System.Drawing.Point(287, 313);
+            btnDatabase.Margin = new System.Windows.Forms.Padding(2);
+            btnDatabase.Name = "btnDatabase";
+            btnDatabase.Size = new System.Drawing.Size(140, 36);
+            btnDatabase.TabIndex = 7;
+            btnDatabase.Text = "Load database";
+            btnDatabase.UseVisualStyleBackColor = true;
+            btnDatabase.Click += btnDatabase_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -239,5 +252,6 @@ namespace Bakery
         private System.Windows.Forms.OpenFileDialog fdOpen;
         private System.Windows.Forms.SaveFileDialog fdSave;
         private System.Windows.Forms.CheckBox cbxVAT;
+        private System.Windows.Forms.Button btnDatabase;
     }
 }

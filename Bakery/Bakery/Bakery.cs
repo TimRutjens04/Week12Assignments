@@ -101,7 +101,7 @@ namespace Bakery
 
         public double CalculateRevenue()
         {
-            double totalRevenue = soldSandwiches.Sum();
+            double totalRevenue = soldSandwiches.Sum(); //this line breaks when no bakery is selected
             if (IncludeVAT) 
             {
                 totalRevenue = totalRevenue * VAT_PERCENTAGE;
@@ -125,7 +125,21 @@ namespace Bakery
             MessageBox.Show(message);
         }
         
-        //This was for Database integration, look at comment on canvas for expl.
+        public void getFromDatabase(Bakery databaseBakery, 
+                                    List<Sandwich> databaseSandwiches, 
+                                    List<Ingredient> databaseIngredients) 
+        {
+            using (SqlConnection conn = new SqlConnection("server=mssqlstud.fhict.local;" +
+                                                          "database =dbi535094_bakery;" +
+                                                          "user id =dbi535094_bakery;" +
+                                                          "password =bakery;")) 
+            {
+                string sqlBakery = "SELECT ";
+                string sqlSandwiches = "SELECT";
+                string sqlIngredients = "SELECT";
+            }
+        }
+        //maybe useful for the future:
         public void Serializer(string fileName) 
         {
             try 

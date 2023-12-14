@@ -163,15 +163,41 @@ namespace Bakery
 
         private void btnSell_Click(object sender, EventArgs e)
         {
-            var checkedItem = lbxMenu.SelectedItem;
-            var sandwichString = checkedItem.ToString().Split('-')[2].Trim();
-            bakery.SellSandwiches(sandwichString);
+            if (bakery == null)
+            { 
+                MessageBox.Show("Instantialize a bakery first.");
+                return;
+            }
+            if (lbxMenu.SelectedItem == null) 
+            {
+                MessageBox.Show("Select a sandwich to sell.");
+                return;
+            }
+            else
+            {
+                var checkedItem = lbxMenu.SelectedItem;
+                var sandwichString = checkedItem.ToString().Split('-')[2].Trim();
+                bakery.SellSandwiches(sandwichString);
+            }
         }
 
         private void btnRevenue_Click(object sender, EventArgs e)
         {
-            bakery.IncludeVAT = cbxVAT.Checked;
-            bakery.ShowRevenue();
+            if (bakery == null) 
+            {
+                MessageBox.Show("Please instantialize a bakery first.");
+                return;
+            }
+            else 
+            {
+                bakery.IncludeVAT = cbxVAT.Checked;
+                bakery.ShowRevenue();
+            }
+        }
+
+        private void btnDatabase_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This doesn't work yet");
         }
     }
 }
