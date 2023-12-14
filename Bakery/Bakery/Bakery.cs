@@ -124,6 +124,8 @@ namespace Bakery
             }
             MessageBox.Show(message);
         }
+        
+        //This was for Database integration, look at comment on canvas for expl.
         public void Serializer(string fileName) 
         {
             try 

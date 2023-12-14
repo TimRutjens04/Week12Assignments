@@ -52,7 +52,7 @@ namespace Bakery
         public string GetInfo(string name, BreadType bread, Ingredient ingredient) 
         {
 
-            return $"Name: {this.name} - Bread: {this.bread} with {ingredient}"; //ingredient should prob be list
+            return $"Name: {this.name} - Bread: {this.bread} with {ingredient}";
         }
         public double CalculateTotalPrice()
         {
@@ -80,11 +80,6 @@ namespace Bakery
             string totalPriceValue = CalculateTotalPrice().ToString("C").Trim(); 
 
             string displayInfo = $"{breadValue} - {nameValue} - {totalPriceValue}";
-            
-            Debug.WriteLine($"Bread: {breadValue}");
-            Debug.WriteLine($"Name: {nameValue}");
-            Debug.WriteLine($"Base Price: {totalPriceValue}");
-            Debug.WriteLine($"Display Info: {displayInfo}");
 
             return displayInfo;
         }
