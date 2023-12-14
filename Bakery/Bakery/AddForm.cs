@@ -13,6 +13,7 @@ namespace Bakery
     public partial class AddForm : Form
     {
         private Bakery bakery;
+        public List<Ingredient> sandwichIngredients = new List<Ingredient>();
         //private Sandwich _sandwich;
 
         public AddForm(Bakery b)
@@ -21,6 +22,7 @@ namespace Bakery
             bakery = b;
             clbxIngredients.Items.Clear();
             UpdateIngredientsListbox();
+            
         }
 
         private void UpdateIngredientsListbox()
@@ -39,26 +41,30 @@ namespace Bakery
             {
                 string sandwichName = tbxName.Text;
                 string selectedBread = cbbBreadFilter.SelectedItem.ToString();
-                if (Enum.TryParse(selectedBread, out BreadType sandwichBread)) { }
-                else { MessageBox.Show("Invalid bread type"); }
-
-                List<Ingredient> sandwichIngredients = new List<Ingredient>();
-
-                foreach (var checkedItem in clbxIngredients.CheckedItems)
+                if (selectedBread != null)
                 {
-                    var ingredientName = checkedItem.ToString().Split('-')[0].Trim();
-                    var ingredient = bakery.GetAvailableIngredients().FirstOrDefault(i => i.GetName() == ingredientName);
-                    if (ingredient != null)
+                    if (Enum.TryParse(selectedBread, out BreadType sandwichBread)) { }
+                    else { MessageBox.Show("Invalid bread type"); }
+
+                    
+
+                    foreach (var checkedItem in clbxIngredients.CheckedItems)
                     {
-                        sandwichIngredients.Add(ingredient);
+                        var ingredientName = checkedItem.ToString().Split('-')[0].Trim();
+                        var ingredient = bakery.GetAvailableIngredients().FirstOrDefault(i => i.GetName() == ingredientName);
+                        if (ingredient != null)
+                        {
+                            sandwichIngredients.Add(ingredient);
+                        }
                     }
+                    double basePrice = 7;
+                    Sandwich sandwich = new Sandwich(sandwichName, basePrice, sandwichBread, sandwichIngredients);
+                    double sandwichPrice = sandwich.CalculateTotalPrice();
+                    sandwich.SetPrice(sandwichPrice);
+                    bakery.AddSandwich(sandwich);
+                    this.Close();
                 }
-                double basePrice = 7;
-                Sandwich sandwich = new Sandwich(sandwichName, basePrice, sandwichBread, sandwichIngredients);
-                double sandwichPrice = sandwich.CalculateTotalPrice();
-                sandwich.SetPrice(sandwichPrice);
-                bakery.AddSandwich(sandwich);
-                this.Close();
+                else { MessageBox.Show("Please select a valid type of bread from the list."); }
             }
             else { MessageBox.Show("Please make sure your sandwich has at least 1 topping and 5 at most."); }
         }

@@ -66,11 +66,11 @@ namespace Bakery
 
         public string DisplayInfoSandwich()
         {
-            string breadValue = bread.ToString().Trim();
-            string nameValue = name.Trim();
-            string totalPriceValue = CalculateTotalPrice().ToString("C").Trim(); 
+            string breadValue = bread.ToString();
+            string nameValue = name;
+            string totalPriceValue = CalculateTotalPrice().ToString("C"); 
 
-            string displayInfo = $"{breadValue} - {nameValue} - {totalPriceValue}";
+            string displayInfo = $"{breadValue} - {nameValue} - {totalPriceValue}".Trim();
             
             Debug.WriteLine($"Bread: {breadValue}");
             Debug.WriteLine($"Name: {nameValue}");
@@ -79,6 +79,12 @@ namespace Bakery
 
             return displayInfo;
         }
-
+        public string DisplaySandwichLabel(AddForm addForm, string name, BreadType bread, double price) 
+        {
+            List<Ingredient> ingredients = addForm.sandwichIngredients;
+            string ingredientList = string.Join(", ", ingredients.Select(i => i.Name));
+            string displayString = $"Name: {name}\nBread: {bread}\nPrice: {price:C}\nIngredients: {ingredientList}";
+            return displayString;
+        }
     }
 }
