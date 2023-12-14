@@ -38,7 +38,13 @@ namespace Bakery
             if (clbxIngredients.CheckedItems.Count > 0 && clbxIngredients.CheckedItems.Count <= 5)
             {
                 string sandwichName = tbxName.Text;
+                if (cbbBreadFilter.SelectedItem == null)
+                {
+                    MessageBox.Show("Please select a bread type");
+                    return;
+                }
                 string selectedBread = cbbBreadFilter.SelectedItem.ToString();
+       
                 if (Enum.TryParse(selectedBread, out BreadType sandwichBread)) { }
                 else { MessageBox.Show("Invalid bread type"); }
 

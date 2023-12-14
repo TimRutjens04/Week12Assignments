@@ -63,6 +63,15 @@ namespace Bakery
             }
             return totalPrice;
         }
+        public string LabelInfoIngredients() 
+        {
+            List<string> ingredientList = new List<string>();
+            foreach (var ingredient in ingredients) 
+            {
+                ingredientList.Add(ingredient.ToString());
+            }
+            return string.Join(", ", ingredientList);
+        }
 
         public string DisplayInfoSandwich()
         {

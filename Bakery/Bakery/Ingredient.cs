@@ -29,6 +29,10 @@ namespace Bakery
         { return this.Price; }
 
         public string DisplayInfoIngredient() => $"{Name} - {Price:C}";
-        
+        public override string ToString()
+        {
+            return Name;
+        }
+
     }
 }

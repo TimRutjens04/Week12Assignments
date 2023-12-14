@@ -38,6 +38,7 @@ namespace Bakery
             btnSave = new System.Windows.Forms.Button();
             lbxMenu = new System.Windows.Forms.ListBox();
             groupBox2 = new System.Windows.Forms.GroupBox();
+            cbxVAT = new System.Windows.Forms.CheckBox();
             btnRevenue = new System.Windows.Forms.Button();
             btnSell = new System.Windows.Forms.Button();
             lblSandwichInfo = new System.Windows.Forms.Label();
@@ -144,6 +145,7 @@ namespace Bakery
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(cbxVAT);
             groupBox2.Controls.Add(btnRevenue);
             groupBox2.Controls.Add(btnSell);
             groupBox2.Controls.Add(lblSandwichInfo);
@@ -156,15 +158,26 @@ namespace Bakery
             groupBox2.TabStop = false;
             groupBox2.Text = "Cart";
             // 
+            // cbxVAT
+            // 
+            cbxVAT.AutoSize = true;
+            cbxVAT.Location = new System.Drawing.Point(290, 317);
+            cbxVAT.Name = "cbxVAT";
+            cbxVAT.Size = new System.Drawing.Size(80, 29);
+            cbxVAT.TabIndex = 3;
+            cbxVAT.Text = "+VAT";
+            cbxVAT.UseVisualStyleBackColor = true;
+            // 
             // btnRevenue
             // 
             btnRevenue.Location = new System.Drawing.Point(5, 312);
             btnRevenue.Margin = new System.Windows.Forms.Padding(2);
             btnRevenue.Name = "btnRevenue";
-            btnRevenue.Size = new System.Drawing.Size(365, 36);
+            btnRevenue.Size = new System.Drawing.Size(280, 36);
             btnRevenue.TabIndex = 2;
             btnRevenue.Text = "Show total revenue";
             btnRevenue.UseVisualStyleBackColor = true;
+            btnRevenue.Click += btnRevenue_Click;
             // 
             // btnSell
             // 
@@ -175,6 +188,7 @@ namespace Bakery
             btnSell.TabIndex = 1;
             btnSell.Text = "Sell selected sandwhich";
             btnSell.UseVisualStyleBackColor = true;
+            btnSell.Click += btnSell_Click;
             // 
             // lblSandwichInfo
             // 
@@ -204,6 +218,7 @@ namespace Bakery
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -223,5 +238,6 @@ namespace Bakery
         private System.Windows.Forms.Button btnShowOfferedSandwiches;
         private System.Windows.Forms.OpenFileDialog fdOpen;
         private System.Windows.Forms.SaveFileDialog fdSave;
+        private System.Windows.Forms.CheckBox cbxVAT;
     }
 }

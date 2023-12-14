@@ -27,10 +27,9 @@ namespace Bakery
 
     public partial class MainForm : Form
     {
-        private string connectionString = "Your_Connection_String_Here";
         private Bakery bakery;
         private Sandwich sandwich;
-        private List<Sandwich> sandwiches = new List<Sandwich>();
+        //private List<Sandwich> sandwiches = new List<Sandwich>();
         //private DataContractSerializer serializer;
         private XmlSerializer serializer = new XmlSerializer(typeof(Bakery));
 
@@ -60,6 +59,11 @@ namespace Bakery
         {
             if (bakery != null)
             {
+                if (cbbBreadFilter.SelectedItem == null)
+                {
+                    MessageBox.Show("Please select a bread type");
+                    return;
+                }
                 string selectedBread = cbbBreadFilter.SelectedItem.ToString();
                 if (Enum.TryParse(selectedBread, out BreadType bread)) { }
                 else { MessageBox.Show("Invalid bread type"); }
@@ -84,40 +88,19 @@ namespace Bakery
         {
             if (lbxMenu.SelectedItem != null)
             {
-                string selectedDisplayInfo = lbxMenu.SelectedItem.ToString().Trim();
+                string sandwichName = lbxMenu.SelectedItem.ToString().Split('-')[1].Trim();
 
-                // Debugging statement to check the selected display info
-                Debug.WriteLine($"Selected Display Info: {selectedDisplayInfo}");
+                Sandwich selectedSandwich = bakery.sandwiches.FirstOrDefault(s => s.GetName() == sandwichName);
 
-                List<Sandwich> matchingSandwiches = sandwiches
-                    .Where(s => string.Equals(s.DisplayInfoSandwich().Trim(), selectedDisplayInfo, StringComparison.OrdinalIgnoreCase))
-                    .ToList();
-
-                // Debugging statement to check the number of matching sandwiches
-                Debug.WriteLine($"Number of Matching Sandwiches: {matchingSandwiches.Count}");
-
-                // Initialize a variable to store sandwich information
-                string sandwichInfo = "";
-
-                foreach (var selectedSandwich in matchingSandwiches)
+                if (selectedSandwich != null)
                 {
-                    // Debugging statement to check the display info for each matching sandwich
-                    Debug.WriteLine($"Matching Sandwich Display Info: {selectedSandwich.DisplayInfoSandwich()}");
-
-                    string displayName = selectedSandwich.GetName();
-                    List<string> displaySelectedIngredientList = selectedSandwich.GetIngredients()
-                        .Select(ingredient => ingredient.DisplayInfoIngredient())
-                        .ToList();
-
-                    string ingredientInfo = string.Join("\n", displaySelectedIngredientList);
-
-                    sandwichInfo += $"{displayName}\n{ingredientInfo}\n";
+                    string ingredientInfo = selectedSandwich.LabelInfoIngredients();
+                    lblSandwichInfo.Text = $"{selectedSandwich.GetName()}: {ingredientInfo}";
                 }
-
-                // Debugging statement to check the final sandwich information
-                Debug.WriteLine($"Final Sandwich Info: {sandwichInfo}");
-
-                lblSandwichInfo.Text = string.IsNullOrEmpty(sandwichInfo) ? "No matching sandwich found." : sandwichInfo;
+                else
+                {
+                    lblSandwichInfo.Text = $"Selected sandwich '{sandwichName}' not found in the collection.";
+                }
             }
             else
             {
@@ -127,13 +110,14 @@ namespace Bakery
 
 
 
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             fdSave.Filter = "XML Files|*.xml";
             fdSave.Title = "Save Dakery Data";
-            if (fdSave.ShowDialog() == DialogResult.OK) 
+            if (fdSave.ShowDialog() == DialogResult.OK)
             {
-                string fileName = fdSave.FileName;  
+                string fileName = fdSave.FileName;
                 using (FileStream fs = new(fileName, FileMode.Create, FileAccess.Write))
                 {
                     try
@@ -156,24 +140,24 @@ namespace Bakery
             {
                 string fileName = fdOpen.FileName;
                 using (FileStream fs = new(fileName, FileMode.Open, FileAccess.Read))
+                {
+                    try
                     {
-                        try
+                        Bakery? _bakery = (Bakery?)serializer.Deserialize(fs);
+                        if (_bakery != null)
                         {
-                            Bakery? _bakery = (Bakery?)serializer.Deserialize(fs);
-                            if (_bakery != null)
-                            {
-                                this.bakery = _bakery;
-                            }
-                            else
-                            {
-                                throw new Exception("Deserialized object is null");
-                            }
+                            this.bakery = _bakery;
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            MessageBox.Show("Error loading data " + ex.Message);
+                            throw new Exception("Deserialized object is null");
                         }
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error loading data " + ex.Message);
+                    }
+                }
             }
         }
 
@@ -181,32 +165,13 @@ namespace Bakery
         {
             var checkedItem = lbxMenu.SelectedItem;
             var sandwichString = checkedItem.ToString().Split('-')[2].Trim();
-
-            /*
-            if (double.TryParse(sandwichString.Replace("€", ""),
-                NumberStyles.Currency, CultureInfo.CurrentCulture,
-                out double sandwichRevenue))
-            {
-                sandwichesSold.Add(sandwichRevenue);
-            }
-            else { MessageBox.Show("Failed to parse due to currency conflicts."); }
-            */
+            bakery.SellSandwiches(sandwichString);
         }
 
         private void btnRevenue_Click(object sender, EventArgs e)
         {
-            bakery.IncludeVAT = cbxVat.Checked;
+            bakery.IncludeVAT = cbxVAT.Checked;
             bakery.ShowRevenue();
-            /*
-            double totalRevenue = sandwichesSold.Sum();
-            if (cbxVat.Checked)
-            {
-                totalRevenue = totalRevenue * 1.09;
-                MessageBox.Show($"Total revenue for {bakery._name} is {totalRevenue:C} (including VAT)");
-            }
-            else { MessageBox.Show($"Total revenue for {bakery._name} is {totalRevenue:C} (excluding VAT)"); }
-            */
         }
     }
 }
-
