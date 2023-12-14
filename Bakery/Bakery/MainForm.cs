@@ -81,6 +81,8 @@ namespace Bakery
         }
         private void lbxMenu_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+            /*
             string selectedItem = lbxMenu.SelectedItem?.ToString();
 
             if (!string.IsNullOrEmpty(selectedItem))
@@ -111,6 +113,7 @@ namespace Bakery
             {
                 lblSandwichInfo.Text = "No sandwich selected.";
             }
+            */
         }
 
 

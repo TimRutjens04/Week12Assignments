@@ -79,6 +79,12 @@ namespace Bakery
 
             return displayInfo;
         }
-
+        public string DisplaySandwichLabel(AddForm addForm, string name, BreadType bread, double price) 
+        {
+            List<Ingredient> ingredients = addForm.sandwichIngredients;
+            string ingredientList = string.Join(", ", ingredients.Select(i => i.Name));
+            string displayString = $"Name: {name}\nBread: {bread}\nPrice: {price:C}\nIngredients: {ingredientList}";
+            return displayString;
+        }
     }
 }
