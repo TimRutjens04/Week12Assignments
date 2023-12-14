@@ -9,6 +9,7 @@ using System.Xml.Serialization;
 using System.Data.SqlClient;
 using System.Runtime.Serialization;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 
 namespace Bakery
 {
@@ -18,11 +19,14 @@ namespace Bakery
         [DataMember]
         public string _name;
         [DataMember]
-        private const int VAT_PERCENTAGE = 9;
+        private const double VAT_PERCENTAGE = 1.09;
         [DataMember]
-        public List<Sandwich> sandwiches {  get; set; }
+        public List<Sandwich> sandwiches { get; set; }
         [DataMember]
         public List<Ingredient> ingredients { get; set; }
+        [DataMember]
+        public List<double> soldSandwiches { get; set; }
+        private bool _VAT = false;
 
         public Bakery() 
         {
@@ -51,6 +55,11 @@ namespace Bakery
             
         public List<Ingredient> GetAvailableIngredients() 
             { return ingredients; }
+        public bool IncludeVAT 
+        {
+            get { return _VAT; } 
+            set { _VAT = value;}
+        }
 
         public void AddSandwich(Sandwich sandwich) 
             {
@@ -78,6 +87,42 @@ namespace Bakery
                     MessageBox.Show("Please select a type of bread.");
                     return string.Empty;
             }
+        }
+        public void SellSandwiches(string sandwichString) 
+        {
+            if (double.TryParse(sandwichString.Replace("€", ""),
+                NumberStyles.Currency, CultureInfo.CurrentCulture,
+                out double sandwichRevenue)) 
+            {
+                soldSandwiches.Add(sandwichRevenue);
+            }
+            else { MessageBox.Show("Failed to parse due to currency conflicts."); }
+        }
+
+        public double CalculateRevenue()
+        {
+            double totalRevenue = soldSandwiches.Sum();
+            if (IncludeVAT) 
+            {
+                totalRevenue = totalRevenue * VAT_PERCENTAGE;
+                return totalRevenue;
+            }
+            return totalRevenue;
+        }
+
+        public void ShowRevenue() 
+        {
+            double totalRevenue = CalculateRevenue();
+            string message;
+            if (IncludeVAT) 
+            {
+                message = $"Total revenue for {_name} is {totalRevenue:C} (including VAT)";
+            }
+            else 
+            {
+                message = $"Total revenue for {_name} is {totalRevenue:C} (excluding VAT)";
+            }
+            MessageBox.Show(message);
         }
         public void Serializer(string fileName) 
         {

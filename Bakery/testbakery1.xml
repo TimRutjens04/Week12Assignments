@@ -68,4 +68,13 @@
       <Price>0.1</Price>
     </Ingredient>
   </ingredients>
+  <soldSandwiches>
+    <double>8.8</double>
+    <double>8.8</double>
+    <double>8.8</double>
+    <double>8.8</double>
+    <double>8.8</double>
+    <double>8.8</double>
+  </soldSandwiches>
+  <IncludeVAT>true</IncludeVAT>
 </Bakery>

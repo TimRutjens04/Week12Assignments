@@ -177,7 +177,36 @@ namespace Bakery
             }
         }
 
+        private void btnSell_Click(object sender, EventArgs e)
+        {
+            var checkedItem = lbxMenu.SelectedItem;
+            var sandwichString = checkedItem.ToString().Split('-')[2].Trim();
 
+            /*
+            if (double.TryParse(sandwichString.Replace("€", ""),
+                NumberStyles.Currency, CultureInfo.CurrentCulture,
+                out double sandwichRevenue))
+            {
+                sandwichesSold.Add(sandwichRevenue);
+            }
+            else { MessageBox.Show("Failed to parse due to currency conflicts."); }
+            */
+        }
+
+        private void btnRevenue_Click(object sender, EventArgs e)
+        {
+            bakery.IncludeVAT = cbxVat.Checked;
+            bakery.ShowRevenue();
+            /*
+            double totalRevenue = sandwichesSold.Sum();
+            if (cbxVat.Checked)
+            {
+                totalRevenue = totalRevenue * 1.09;
+                MessageBox.Show($"Total revenue for {bakery._name} is {totalRevenue:C} (including VAT)");
+            }
+            else { MessageBox.Show($"Total revenue for {bakery._name} is {totalRevenue:C} (excluding VAT)"); }
+            */
+        }
     }
 }
 
