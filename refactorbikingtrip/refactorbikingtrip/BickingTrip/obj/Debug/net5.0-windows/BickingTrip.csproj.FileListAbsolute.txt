@@ -1,0 +1,36 @@
+C:\Users\Thr33\Documents\Files\Fontys\VisualStudio\Week12_Day2_InClass\BickingTrip\bin\Debug\net5.0-windows\BickingTrip.exe
+C:\Users\Thr33\Documents\Files\Fontys\VisualStudio\Week12_Day2_InClass\BickingTrip\bin\Debug\net5.0-windows\BickingTrip.deps.json
+C:\Users\Thr33\Documents\Files\Fontys\VisualStudio\Week12_Day2_InClass\BickingTrip\bin\Debug\net5.0-windows\BickingTrip.runtimeconfig.json
+C:\Users\Thr33\Documents\Files\Fontys\VisualStudio\Week12_Day2_InClass\BickingTrip\bin\Debug\net5.0-windows\BickingTrip.runtimeconfig.dev.json
+C:\Users\Thr33\Documents\Files\Fontys\VisualStudio\Week12_Day2_InClass\BickingTrip\bin\Debug\net5.0-windows\BickingTrip.dll
+C:\Users\Thr33\Documents\Files\Fontys\VisualStudio\Week12_Day2_InClass\BickingTrip\bin\Debug\net5.0-windows\BickingTrip.pdb
+C:\Users\Thr33\Documents\Files\Fontys\VisualStudio\Week12_Day2_InClass\BickingTrip\obj\Debug\net5.0-windows\BickingTrip.Form1.resources
+C:\Users\Thr33\Documents\Files\Fontys\VisualStudio\Week12_Day2_InClass\BickingTrip\obj\Debug\net5.0-windows\BickingTrip.Properties.Resources.resources
+C:\Users\Thr33\Documents\Files\Fontys\VisualStudio\Week12_Day2_InClass\BickingTrip\obj\Debug\net5.0-windows\BickingTrip.csproj.GenerateResource.cache
+C:\Users\Thr33\Documents\Files\Fontys\VisualStudio\Week12_Day2_InClass\BickingTrip\obj\Debug\net5.0-windows\BickingTrip.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Thr33\Documents\Files\Fontys\VisualStudio\Week12_Day2_InClass\BickingTrip\obj\Debug\net5.0-windows\BickingTrip.AssemblyInfoInputs.cache
+C:\Users\Thr33\Documents\Files\Fontys\VisualStudio\Week12_Day2_InClass\BickingTrip\obj\Debug\net5.0-windows\BickingTrip.AssemblyInfo.cs
+C:\Users\Thr33\Documents\Files\Fontys\VisualStudio\Week12_Day2_InClass\BickingTrip\obj\Debug\net5.0-windows\BickingTrip.csproj.CoreCompileInputs.cache
+C:\Users\Thr33\Documents\Files\Fontys\VisualStudio\Week12_Day2_InClass\BickingTrip\obj\Debug\net5.0-windows\BickingTrip.dll
+C:\Users\Thr33\Documents\Files\Fontys\VisualStudio\Week12_Day2_InClass\BickingTrip\obj\Debug\net5.0-windows\refint\BickingTrip.dll
+C:\Users\Thr33\Documents\Files\Fontys\VisualStudio\Week12_Day2_InClass\BickingTrip\obj\Debug\net5.0-windows\BickingTrip.pdb
+C:\Users\Thr33\Documents\Files\Fontys\VisualStudio\Week12_Day2_InClass\BickingTrip\obj\Debug\net5.0-windows\BickingTrip.genruntimeconfig.cache
+C:\Users\Thr33\Documents\Files\Fontys\VisualStudio\Week12_Day2_InClass\BickingTrip\obj\Debug\net5.0-windows\ref\BickingTrip.dll
+C:\Users\timru\Downloads\Week12_Day2_InClass_-_Bike_App\Week12_Day2_InClass - Bike App\BickingTrip\bin\Debug\net5.0-windows\BickingTrip.exe
+C:\Users\timru\Downloads\Week12_Day2_InClass_-_Bike_App\Week12_Day2_InClass - Bike App\BickingTrip\bin\Debug\net5.0-windows\BickingTrip.deps.json
+C:\Users\timru\Downloads\Week12_Day2_InClass_-_Bike_App\Week12_Day2_InClass - Bike App\BickingTrip\bin\Debug\net5.0-windows\BickingTrip.runtimeconfig.json
+C:\Users\timru\Downloads\Week12_Day2_InClass_-_Bike_App\Week12_Day2_InClass - Bike App\BickingTrip\bin\Debug\net5.0-windows\BickingTrip.runtimeconfig.dev.json
+C:\Users\timru\Downloads\Week12_Day2_InClass_-_Bike_App\Week12_Day2_InClass - Bike App\BickingTrip\bin\Debug\net5.0-windows\BickingTrip.dll
+C:\Users\timru\Downloads\Week12_Day2_InClass_-_Bike_App\Week12_Day2_InClass - Bike App\BickingTrip\bin\Debug\net5.0-windows\BickingTrip.pdb
+C:\Users\timru\Downloads\Week12_Day2_InClass_-_Bike_App\Week12_Day2_InClass - Bike App\BickingTrip\obj\Debug\net5.0-windows\BickingTrip.Form1.resources
+C:\Users\timru\Downloads\Week12_Day2_InClass_-_Bike_App\Week12_Day2_InClass - Bike App\BickingTrip\obj\Debug\net5.0-windows\BickingTrip.Properties.Resources.resources
+C:\Users\timru\Downloads\Week12_Day2_InClass_-_Bike_App\Week12_Day2_InClass - Bike App\BickingTrip\obj\Debug\net5.0-windows\BickingTrip.csproj.GenerateResource.cache
+C:\Users\timru\Downloads\Week12_Day2_InClass_-_Bike_App\Week12_Day2_InClass - Bike App\BickingTrip\obj\Debug\net5.0-windows\BickingTrip.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\timru\Downloads\Week12_Day2_InClass_-_Bike_App\Week12_Day2_InClass - Bike App\BickingTrip\obj\Debug\net5.0-windows\BickingTrip.AssemblyInfoInputs.cache
+C:\Users\timru\Downloads\Week12_Day2_InClass_-_Bike_App\Week12_Day2_InClass - Bike App\BickingTrip\obj\Debug\net5.0-windows\BickingTrip.AssemblyInfo.cs
+C:\Users\timru\Downloads\Week12_Day2_InClass_-_Bike_App\Week12_Day2_InClass - Bike App\BickingTrip\obj\Debug\net5.0-windows\BickingTrip.csproj.CoreCompileInputs.cache
+C:\Users\timru\Downloads\Week12_Day2_InClass_-_Bike_App\Week12_Day2_InClass - Bike App\BickingTrip\obj\Debug\net5.0-windows\BickingTrip.dll
+C:\Users\timru\Downloads\Week12_Day2_InClass_-_Bike_App\Week12_Day2_InClass - Bike App\BickingTrip\obj\Debug\net5.0-windows\refint\BickingTrip.dll
+C:\Users\timru\Downloads\Week12_Day2_InClass_-_Bike_App\Week12_Day2_InClass - Bike App\BickingTrip\obj\Debug\net5.0-windows\BickingTrip.pdb
+C:\Users\timru\Downloads\Week12_Day2_InClass_-_Bike_App\Week12_Day2_InClass - Bike App\BickingTrip\obj\Debug\net5.0-windows\BickingTrip.genruntimeconfig.cache
+C:\Users\timru\Downloads\Week12_Day2_InClass_-_Bike_App\Week12_Day2_InClass - Bike App\BickingTrip\obj\Debug\net5.0-windows\ref\BickingTrip.dll

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "0YhxK2V55nJiF2ouXb9kzzJw+L2y8GlVg1oB9s4QcVNelQ6cYAoKNiUewrd6SEPjO/GM2wmxLRuNtD1StgP7zg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\timru\\Downloads\\Week12_Day2_InClass_-_Bike_App\\Week12_Day2_InClass - Bike App\\BickingTrip\\BikingTrip.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\timru\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\timru\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\timru\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\timru\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
+  ],
+  "logs": []
+}
