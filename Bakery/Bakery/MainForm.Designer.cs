@@ -43,6 +43,7 @@ namespace Bakery
             lblSandwichInfo = new System.Windows.Forms.Label();
             fdOpen = new System.Windows.Forms.OpenFileDialog();
             fdSave = new System.Windows.Forms.SaveFileDialog();
+            cbxVat = new System.Windows.Forms.CheckBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -144,6 +145,7 @@ namespace Bakery
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(cbxVat);
             groupBox2.Controls.Add(btnRevenue);
             groupBox2.Controls.Add(btnSell);
             groupBox2.Controls.Add(lblSandwichInfo);
@@ -161,10 +163,11 @@ namespace Bakery
             btnRevenue.Location = new System.Drawing.Point(5, 312);
             btnRevenue.Margin = new System.Windows.Forms.Padding(2);
             btnRevenue.Name = "btnRevenue";
-            btnRevenue.Size = new System.Drawing.Size(365, 36);
+            btnRevenue.Size = new System.Drawing.Size(280, 36);
             btnRevenue.TabIndex = 2;
             btnRevenue.Text = "Show total revenue";
             btnRevenue.UseVisualStyleBackColor = true;
+            btnRevenue.Click += btnRevenue_Click;
             // 
             // btnSell
             // 
@@ -175,6 +178,7 @@ namespace Bakery
             btnSell.TabIndex = 1;
             btnSell.Text = "Sell selected sandwhich";
             btnSell.UseVisualStyleBackColor = true;
+            btnSell.Click += btnSell_Click;
             // 
             // lblSandwichInfo
             // 
@@ -191,11 +195,21 @@ namespace Bakery
             // 
             fdOpen.FileName = "openFileDialog1";
             // 
+            // cbxVat
+            // 
+            cbxVat.AutoSize = true;
+            cbxVat.Location = new System.Drawing.Point(290, 317);
+            cbxVat.Name = "cbxVat";
+            cbxVat.Size = new System.Drawing.Size(80, 29);
+            cbxVat.TabIndex = 3;
+            cbxVat.Text = "+VAT";
+            cbxVat.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(841, 367);
+            ClientSize = new System.Drawing.Size(842, 367);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Margin = new System.Windows.Forms.Padding(2);
@@ -204,6 +218,7 @@ namespace Bakery
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -223,5 +238,6 @@ namespace Bakery
         private System.Windows.Forms.Button btnShowOfferedSandwiches;
         private System.Windows.Forms.OpenFileDialog fdOpen;
         private System.Windows.Forms.SaveFileDialog fdSave;
+        private System.Windows.Forms.CheckBox cbxVat;
     }
 }

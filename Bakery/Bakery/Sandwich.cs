@@ -86,5 +86,9 @@ namespace Bakery
             string displayString = $"Name: {name}\nBread: {bread}\nPrice: {price:C}\nIngredients: {ingredientList}";
             return displayString;
         }
+        public string DisplaySandwichLabel() 
+        {
+            return null;
+        }
     }
 }

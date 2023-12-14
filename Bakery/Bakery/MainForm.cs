@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
+using System.Globalization;
 
 namespace Bakery
 {
@@ -30,6 +31,7 @@ namespace Bakery
         private Bakery bakery;
         private Sandwich sandwich;
         private List<Sandwich> sandwiches = new List<Sandwich>();
+        private List<double> sandwichesSold = new List<double>(); //I know it should be Sandwich but i can't seem to get that working.
         //private DataContractSerializer serializer;
         private XmlSerializer serializer = new XmlSerializer(typeof(Bakery));
 
@@ -39,10 +41,10 @@ namespace Bakery
 
             // Init GUI
             //lblSandwichInfo.Text = String.Empty;
-
             List<Sandwich> sandwiches = new List<Sandwich>();
             List<Ingredient> ingredients = new List<Ingredient>();
             bakery = new Bakery("Company", sandwiches, ingredients);
+            sandwich = new Sandwich();
         }
 
         private void btnAddSandwich_Click(object sender, EventArgs e)
@@ -81,7 +83,7 @@ namespace Bakery
         }
         private void lbxMenu_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             /*
             string selectedItem = lbxMenu.SelectedItem?.ToString();
 
@@ -123,9 +125,9 @@ namespace Bakery
         {
             fdSave.Filter = "XML Files|*.xml";
             fdSave.Title = "Save Dakery Data";
-            if (fdSave.ShowDialog() == DialogResult.OK) 
+            if (fdSave.ShowDialog() == DialogResult.OK)
             {
-                string fileName = fdSave.FileName;  
+                string fileName = fdSave.FileName;
                 using (FileStream fs = new(fileName, FileMode.Create, FileAccess.Write))
                 {
                     try
@@ -148,28 +150,51 @@ namespace Bakery
             {
                 string fileName = fdOpen.FileName;
                 using (FileStream fs = new(fileName, FileMode.Open, FileAccess.Read))
+                {
+                    try
                     {
-                        try
+                        Bakery? _bakery = (Bakery?)serializer.Deserialize(fs);
+                        if (_bakery != null)
                         {
-                            Bakery? _bakery = (Bakery?)serializer.Deserialize(fs);
-                            if (_bakery != null)
-                            {
-                                this.bakery = _bakery;
-                            }
-                            else
-                            {
-                                throw new Exception("Deserialized object is null");
-                            }
+                            this.bakery = _bakery;
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            MessageBox.Show("Error loading data " + ex.Message);
+                            throw new Exception("Deserialized object is null");
                         }
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error loading data " + ex.Message);
+                    }
+                }
             }
         }
 
+        private void btnSell_Click(object sender, EventArgs e)
+        {
+            var checkedItem = lbxMenu.SelectedItem;
+            var sandwichString = checkedItem.ToString().Split('-')[2].Trim();
 
+            if (double.TryParse(sandwichString.Replace("€", ""),
+                NumberStyles.Currency, CultureInfo.CurrentCulture,
+                out double sandwichRevenue))
+            {
+                sandwichesSold.Add(sandwichRevenue);
+            }
+            else { MessageBox.Show("Failed to parse due to currency conflicts."); }
+        }
+
+        private void btnRevenue_Click(object sender, EventArgs e)
+        {
+            double totalRevenue = sandwichesSold.Sum();
+            if (cbxVat.Checked)
+            {
+                totalRevenue = totalRevenue * 1.09;
+                MessageBox.Show($"Total revenue for {bakery._name} is {totalRevenue:C} (including VAT)");
+            }
+            else { MessageBox.Show($"Total revenue for {bakery._name} is {totalRevenue:C} (excluding VAT)"); }
+        }
     }
 }
 
